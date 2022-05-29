@@ -40,6 +40,15 @@ class BreafFragmen: Fragment() {
         inhaleValue2.text = viewModel.parameters.sessionDeley1.toString()
         exhaleeValue1.text = viewModel.parameters.sessionDeley2.toString()
         exhaleeValue2.text = viewModel.parameters.exhale.toString()
+
+
+        view.findViewById<Button>(R.id.StartButton).setOnClickListener {
+            viewModel.startSession()
+        }
+    }
+
+    fun setStartEnabled(vaule: Boolean) {
+        view?.findViewById<Button>(R.id.StartButton)?.isEnabled = vaule
     }
 
     fun onChange(newValues: Params) {
